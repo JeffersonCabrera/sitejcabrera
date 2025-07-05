@@ -1,49 +1,484 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="profile" href="http://gmpg.org/xfn/11">
-    <link rel="pingback" href="https://jeffersoncabreradeveloper.wordpress.com/xmlrpc.php">
-    <link rel="icon"
-        href="https://jeffersoncabreradeveloper.files.wordpress.com/2019/08/cropped-20770386_1797840016897167_752163106483497978_n-1.jpg?w=32"
-        sizes="32x32" />
-    <link rel="icon"
-        href="https://jeffersoncabreradeveloper.files.wordpress.com/2019/08/cropped-20770386_1797840016897167_752163106483497978_n-1.jpg?w=192"
-        sizes="192x192" />
-    <link rel="apple-touch-icon"
-        href="https://jeffersoncabreradeveloper.files.wordpress.com/2019/08/cropped-20770386_1797840016897167_752163106483497978_n-1.jpg?w=180" />
-    <meta name="msapplication-TileImage"
-        content="https://jeffersoncabreradeveloper.files.wordpress.com/2019/08/cropped-20770386_1797840016897167_752163106483497978_n-1.jpg?w=270" />
-    <title>Jefferson Cabrera &#8211; Desarrollo y curiosidades de Software e Internet</title>
+    <title>Líder Técnico Backend Java – Jefferson Cabrera</title>
+    <meta name="description" content="Jefferson Cabrera - Ingeniero de Computación y Sistemas, Líder Técnico Backend Java con más de 10 años de experiencia en automatización de procesos, coordinación de equipos TI y desarrollo de aplicaciones escalables.">
+    <meta name="keywords" content="Jefferson Cabrera, Backend Java, Spring Boot, Líder Técnico, Ingeniero de Sistemas, Desarrollo Backend, API REST, Migración Cloud">
+    <meta name="author" content="Jefferson Christopher Cabrera Villacorta">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Líder Técnico Backend Java – Jefferson Cabrera">
+    <meta property="og:description" content="Desarrollo soluciones backend robustas y lidero equipos de TI, con más de 10 años resolviendo procesos críticos para empresas del sector financiero y tecnológico.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jeffersoncabrera.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <iframe src="https://jeffersoncabreradeveloper.wordpress.com/" title="sitiowebtemporal" width="100%" height="100%"
-        frameborder="0">
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__logo">
+                <span class="nav__logo-text">JC</span>
+            </div>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#inicio" class="nav__link active-link">Inicio</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#perfil" class="nav__link">Perfil</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#proyectos" class="nav__link">Proyectos</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#experiencia" class="nav__link">Experiencia</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contacto" class="nav__link">Contacto</a>
+                    </li>
+                </ul>
+                
+                <div class="nav__close" id="nav-close">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            
+            <div class="nav__actions">
+                <a href="https://www.linkedin.com/in/jefferson-cabrera/" target="_blank" class="nav__cta">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </a>
+                
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-    </iframe>
+    <!-- Main -->
+    <main class="main">
+        <!-- Home -->
+        <section class="home section" id="inicio">
+            <div class="home__container container grid">
+                <div class="home__content">
+                    <div class="home__data">
+                        <h1 class="home__title">
+                            Jefferson Cabrera
+                            <span class="home__title-accent">Líder Técnico Backend Java</span>
+                        </h1>
+                        
+                        <p class="home__subtitle">
+                            Desarrollo soluciones backend robustas y lidero equipos de TI, con más de 10 años resolviendo procesos críticos para empresas del sector financiero y tecnológico.
+                        </p>
+                        
+                        <p class="home__description">
+                            Combino experiencia en desarrollo backend, automatización de procesos, migración cloud y coordinación de equipos DBA, soporte e infraestructura para entregar soluciones escalables y eficientes.
+                        </p>
+                        
+                        <div class="home__buttons">
+                            <a href="#proyectos" class="button button--primary">
+                                Ver Proyectos
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="#contacto" class="button button--secondary">
+                                Contactar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="home__image">
+                    <div class="home__img-container">
+                        <img src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Jefferson Cabrera - Líder Técnico Backend Java" class="home__img">
+                        <div class="home__img-overlay"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    </iframe>
-    <style type="text/css">
-        html,
-        body,
-        div,
-        iframe {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-        }
+        <!-- About -->
+        <section class="about section" id="perfil">
+            <div class="container">
+                <h2 class="section__title">Sobre Mí</h2>
+                <p class="section__subtitle">Conoce mi trayectoria profesional</p>
+                
+                <div class="about__container grid">
+                    <div class="about__content">
+                        <div class="about__info">
+                            <p class="about__text">
+                                Soy Ingeniero de Computación y Sistemas graduado de la Universidad Peruana de las Américas, con una sólida formación técnica y visión estratégica en tecnologías de información.
+                            </p>
+                            
+                            <p class="about__text">
+                                Con más de 10 años liderando equipos de soporte, DBA e infraestructura TI, me especializo en diseñar y desplegar soluciones backend Java con Spring Boot y SQL Server, enfocándome en la escalabilidad y eficiencia operativa.
+                            </p>
+                            
+                            <p class="about__text">
+                                Mi experiencia incluye migración de servidores y aplicaciones a Huawei Cloud, automatización ETL con Integration Services, desarrollo de APIs REST, optimización de bases de datos y soporte operativo crítico. Actualmente curso una Maestría en Gobierno de Tecnologías de Información para fortalecer mi liderazgo estratégico en TI.
+                            </p>
+                            
+                            <a href="https://www.linkedin.com/in/jefferson-cabrera/" target="_blank" class="button button--primary">
+                                <i class="fab fa-linkedin"></i>
+                                Conecta conmigo en LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="about__skills">
+                        <h3 class="about__skills-title">Tecnologías Principales</h3>
+                        <div class="about__skills-grid">
+                            <div class="skill__item">
+                                <i class="fab fa-java skill__icon"></i>
+                                <span>Java & Spring Boot</span>
+                            </div>
+                            <div class="skill__item">
+                                <i class="fas fa-database skill__icon"></i>
+                                <span>SQL Server</span>
+                            </div>
+                            <div class="skill__item">
+                                <i class="fas fa-cloud skill__icon"></i>
+                                <span>Huawei Cloud</span>
+                            </div>
+                            <div class="skill__item">
+                                <i class="fas fa-cogs skill__icon"></i>
+                                <span>ETL & Automatización</span>
+                            </div>
+                            <div class="skill__item">
+                                <i class="fas fa-users skill__icon"></i>
+                                <span>Liderazgo de Equipos</span>
+                            </div>
+                            <div class="skill__item">
+                                <i class="fas fa-server skill__icon"></i>
+                                <span>Infraestructura TI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        iframe {
-            display: block;
-            width: 100%;
-            border: none;
-        }
-    </style>
+        <!-- Projects -->
+        <section class="projects section" id="proyectos">
+            <div class="container">
+                <h2 class="section__title">Proyectos</h2>
+                <p class="section__subtitle">Casos de liderazgo técnico backend</p>
+                
+                <div class="projects__container grid">
+                    <article class="project__card">
+                        <div class="project__image">
+                            <i class="fas fa-microchip project__icon"></i>
+                        </div>
+                        <div class="project__content">
+                            <h3 class="project__title">Microservicio Spring Boot</h3>
+                            <p class="project__description">
+                                API REST completa con autenticación JWT, validaciones robustas y documentación Swagger. Implementa patrones de diseño enterprise y mejores prácticas de seguridad.
+                            </p>
+                            <div class="project__technologies">
+                                <span class="tech__tag">Spring Boot</span>
+                                <span class="tech__tag">JWT</span>
+                                <span class="tech__tag">Swagger</span>
+                                <span class="tech__tag">MySQL</span>
+                            </div>
+                            <div class="project__links">
+                                <a href="#" class="project__link">
+                                    <i class="fab fa-github"></i>
+                                    Próximamente
+                                </a>
+                            </div>
+                            <p class="project__note">
+                                Desarrollado como caso de liderazgo técnico backend para demostrar prácticas modernas en entornos reales.
+                            </p>
+                        </div>
+                    </article>
+                    
+                    <article class="project__card">
+                        <div class="project__image">
+                            <i class="fas fa-rocket project__icon"></i>
+                        </div>
+                        <div class="project__content">
+                            <h3 class="project__title">Pipeline CI/CD</h3>
+                            <p class="project__description">
+                                Implementación de pipeline automatizado con GitHub Actions y Jenkins, incluyendo testing automatizado, análisis de código y despliegue continuo.
+                            </p>
+                            <div class="project__technologies">
+                                <span class="tech__tag">GitHub Actions</span>
+                                <span class="tech__tag">Jenkins</span>
+                                <span class="tech__tag">SonarQube</span>
+                                <span class="tech__tag">Docker</span>
+                            </div>
+                            <div class="project__links">
+                                <a href="#" class="project__link">
+                                    <i class="fab fa-github"></i>
+                                    Próximamente
+                                </a>
+                            </div>
+                            <p class="project__note">
+                                Desarrollado como caso de liderazgo técnico backend para demostrar prácticas modernas en entornos reales.
+                            </p>
+                        </div>
+                    </article>
+                    
+                    <article class="project__card">
+                        <div class="project__image">
+                            <i class="fab fa-docker project__icon"></i>
+                        </div>
+                        <div class="project__content">
+                            <h3 class="project__title">Contenedorización con Docker</h3>
+                            <p class="project__description">
+                                Aplicación multi-contenedor con Docker Compose y orquestación básica con Kubernetes, incluyendo configuración de servicios y balanceadores de carga.
+                            </p>
+                            <div class="project__technologies">
+                                <span class="tech__tag">Docker</span>
+                                <span class="tech__tag">Kubernetes</span>
+                                <span class="tech__tag">Nginx</span>
+                                <span class="tech__tag">Redis</span>
+                            </div>
+                            <div class="project__links">
+                                <a href="#" class="project__link">
+                                    <i class="fab fa-github"></i>
+                                    Próximamente
+                                </a>
+                            </div>
+                            <p class="project__note">
+                                Desarrollado como caso de liderazgo técnico backend para demostrar prácticas modernas en entornos reales.
+                            </p>
+                        </div>
+                    </article>
+                    
+                    <article class="project__card">
+                        <div class="project__image">
+                            <i class="fas fa-stream project__icon"></i>
+                        </div>
+                        <div class="project__content">
+                            <h3 class="project__title">Sistema de Eventos</h3>
+                            <p class="project__description">
+                                Simulación de flujo de eventos en tiempo real con Apache Kafka y RabbitMQ, implementando patrones de mensajería asíncrona y procesamiento distribuido.
+                            </p>
+                            <div class="project__technologies">
+                                <span class="tech__tag">Apache Kafka</span>
+                                <span class="tech__tag">RabbitMQ</span>
+                                <span class="tech__tag">Spring Cloud</span>
+                                <span class="tech__tag">Microservicios</span>
+                            </div>
+                            <div class="project__links">
+                                <a href="#" class="project__link">
+                                    <i class="fab fa-github"></i>
+                                    Próximamente
+                                </a>
+                            </div>
+                            <p class="project__note">
+                                Desarrollado como caso de liderazgo técnico backend para demostrar prácticas modernas en entornos reales.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="projects__cta">
+                    <p>¿Interesado en ver más proyectos?</p>
+                    <a href="#contacto" class="button button--primary">Suscríbete para actualizaciones</a>
+                </div>
+            </div>
+        </section>
 
+        <!-- Experience -->
+        <section class="experience section" id="experiencia">
+            <div class="container">
+                <h2 class="section__title">Experiencia</h2>
+                <p class="section__subtitle">Mi trayectoria profesional</p>
+                
+                <div class="timeline">
+                    <div class="timeline__item">
+                        <div class="timeline__marker"></div>
+                        <div class="timeline__content">
+                            <div class="timeline__header">
+                                <h3 class="timeline__title">Coordinador TI</h3>
+                                <span class="timeline__company">Finanty</span>
+                                <span class="timeline__period">2014 - 2024 (10 años)</span>
+                            </div>
+                            <p class="timeline__description">
+                                Liderazgo de equipo de 5 técnicos TI especializados en soporte, DBA y desarrollo backend Java. Responsable de la migración completa a Huawei Cloud, implementación de soluciones Spring Boot y coordinación de infraestructura crítica.
+                            </p>
+                            <div class="timeline__technologies">
+                                <span class="tech__tag">Java</span>
+                                <span class="tech__tag">Spring Boot</span>
+                                <span class="tech__tag">SQL Server</span>
+                                <span class="tech__tag">Huawei Cloud</span>
+                                <span class="tech__tag">Liderazgo</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline__item">
+                        <div class="timeline__marker"></div>
+                        <div class="timeline__content">
+                            <div class="timeline__header">
+                                <h3 class="timeline__title">Analista Desarrollador Senior</h3>
+                                <span class="timeline__company">Finanty</span>
+                                <span class="timeline__period">2016 - 2020</span>
+                            </div>
+                            <p class="timeline__description">
+                                Especialista en migración a Huawei Cloud, automatización ETL con Integration Services, optimización de bases de datos SQL Server y desarrollo de servicios REST robustos con Spring Boot.
+                            </p>
+                            <div class="timeline__technologies">
+                                <span class="tech__tag">ETL</span>
+                                <span class="tech__tag">Integration Services</span>
+                                <span class="tech__tag">REST APIs</span>
+                                <span class="tech__tag">Cloud Migration</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline__item">
+                        <div class="timeline__marker"></div>
+                        <div class="timeline__content">
+                            <div class="timeline__header">
+                                <h3 class="timeline__title">Programador Junior</h3>
+                                <span class="timeline__company">Finanty</span>
+                                <span class="timeline__period">2014 - 2016</span>
+                            </div>
+                            <p class="timeline__description">
+                                Optimización de consultas SQL complejas, desarrollo de ETLs eficientes y mantenimiento de aplicaciones web Java Spring integradas con sistemas VB6 para Call Center.
+                            </p>
+                            <div class="timeline__technologies">
+                                <span class="tech__tag">SQL Optimization</span>
+                                <span class="tech__tag">Java Spring</span>
+                                <span class="tech__tag">VB6 Integration</span>
+                                <span class="tech__tag">Call Center</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline__item">
+                        <div class="timeline__marker"></div>
+                        <div class="timeline__content">
+                            <div class="timeline__header">
+                                <h3 class="timeline__title">Administrador y Desarrollador de Sistemas</h3>
+                                <span class="timeline__company">Inversiones Alfinza</span>
+                                <span class="timeline__period">2012 - 2014</span>
+                            </div>
+                            <p class="timeline__description">
+                                Rediseño completo del proceso de pagos, administración integral de base de datos SQL Server, implementación de políticas de seguridad y estrategias de backup automatizadas.
+                            </p>
+                            <div class="timeline__technologies">
+                                <span class="tech__tag">SQL Server DBA</span>
+                                <span class="tech__tag">Payment Systems</span>
+                                <span class="tech__tag">Security</span>
+                                <span class="tech__tag">Backup Strategies</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="contact section" id="contacto">
+            <div class="container">
+                <h2 class="section__title">Contacto</h2>
+                <p class="section__subtitle">¿Interesado en integrar soluciones backend robustas y liderazgo técnico real? Escríbeme.</p>
+                
+                <div class="contact__container grid">
+                    <div class="contact__info">
+                        <div class="contact__card">
+                            <i class="fas fa-envelope contact__card-icon"></i>
+                            <h3 class="contact__card-title">Email</h3>
+                            <span class="contact__card-data">jefferson.cabrera@email.com</span>
+                        </div>
+                        
+                        <div class="contact__card">
+                            <i class="fas fa-map-marker-alt contact__card-icon"></i>
+                            <h3 class="contact__card-title">Ubicación</h3>
+                            <span class="contact__card-data">Lima, Perú</span>
+                        </div>
+                        
+                        <div class="contact__social">
+                            <a href="https://www.linkedin.com/in/jefferson-cabrera/" target="_blank" class="contact__social-link">
+                                <i class="fab fa-linkedin"></i>
+                                LinkedIn
+                            </a>
+                            <a href="https://github.com/jefferson-cabrera" target="_blank" class="contact__social-link">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                            <a href="https://wa.me/51999999999" target="_blank" class="contact__social-link">
+                                <i class="fab fa-whatsapp"></i>
+                                WhatsApp
+                            </a>
+                            <a href="https://linktr.ee/jcabreradev" target="_blank" class="contact__social-link">
+                                <i class="fas fa-link"></i>
+                                Linktree
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <form class="contact__form" id="contact-form">
+                        <div class="contact__form-group">
+                            <input type="text" name="name" placeholder="Tu nombre" class="contact__form-input" required>
+                        </div>
+                        
+                        <div class="contact__form-group">
+                            <input type="email" name="email" placeholder="Tu correo electrónico" class="contact__form-input" required>
+                        </div>
+                        
+                        <div class="contact__form-group">
+                            <textarea name="message" placeholder="Tu mensaje" class="contact__form-input contact__form-area" rows="6" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="button button--primary contact__form-button">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__info">
+                    <h3 class="footer__title">Jefferson Christopher Cabrera Villacorta</h3>
+                    <p class="footer__description">Líder Técnico Backend Java</p>
+                </div>
+                
+                <div class="footer__links">
+                    <a href="https://linktr.ee/jcabreradev" target="_blank" class="footer__link">
+                        <i class="fas fa-link"></i>
+                        linktr.ee/jcabreradev
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer__copy">
+                <p>&copy; 2024 Jefferson Cabrera — Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Up -->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="fas fa-arrow-up scrollup__icon"></i>
+    </a>
+
+    <script src="script.js"></script>
 </body>
-
 </html>
