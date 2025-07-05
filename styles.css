@@ -654,7 +654,7 @@ img {
 .contact__social {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 1.5rem;
   max-width: 600px;
   width: 100%;
 }
@@ -662,15 +662,16 @@ img {
 .contact__social-link {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
   background-color: var(--white-color);
   color: var(--primary-color);
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 1rem;
   font-weight: var(--font-medium);
   transition: var(--transition);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   text-decoration: none;
+  min-height: 80px;
 }
 
 .contact__social-link:hover {
@@ -681,8 +682,8 @@ img {
 }
 
 .contact__social-link i {
-  font-size: 2.5rem;
-  min-width: 2.5rem;
+  font-size: 2rem;
+  min-width: 2rem;
 }
 
 .contact__social-info h3 {
@@ -781,7 +782,7 @@ img {
 }
 
 /* ===== BREAKPOINTS ===== */
-/* For small devices */
+/* For very small devices */
 @media screen and (max-width: 350px) {
   .container {
     margin-left: var(--mb-1);
@@ -807,6 +808,51 @@ img {
 
   .contact__social {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .contact__social-link {
+    padding: 1.25rem;
+    min-height: 70px;
+  }
+
+  .contact__social-link i {
+    font-size: 1.75rem;
+    min-width: 1.75rem;
+  }
+
+  .contact__social-info h3 {
+    font-size: var(--normal-font-size);
+  }
+
+  .contact__social-info span {
+    font-size: var(--smaller-font-size);
+  }
+}
+
+/* For small mobile devices */
+@media screen and (max-width: 480px) {
+  .contact__social {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .contact__social-link {
+    padding: 1.5rem;
+    min-height: 75px;
+  }
+
+  .contact__social-link i {
+    font-size: 1.875rem;
+    min-width: 1.875rem;
+  }
+
+  .contact__social-info h3 {
+    font-size: var(--normal-font-size);
+  }
+
+  .contact__social-info span {
+    font-size: var(--small-font-size);
   }
 }
 
@@ -835,6 +881,17 @@ img {
 
   .contact__social {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .contact__social-link {
+    padding: 2rem;
+    min-height: 90px;
+  }
+
+  .contact__social-link i {
+    font-size: 2.25rem;
+    min-width: 2.25rem;
   }
 }
 
@@ -980,6 +1037,20 @@ img {
 
   .contact__container {
     column-gap: 6rem;
+  }
+
+  .contact__social {
+    gap: 2.5rem;
+  }
+
+  .contact__social-link {
+    padding: 2.5rem;
+    min-height: 100px;
+  }
+
+  .contact__social-link i {
+    font-size: 2.5rem;
+    min-width: 2.5rem;
   }
 }
 
