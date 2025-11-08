@@ -1,27 +1,88 @@
-{
-# Sitio Personal — Jefferson Cabrera
+# Portafolio Personal de Jefferson Cabrera
 
-Descripción breve
-- Sitio web estático que presenta el perfil profesional, proyectos y contacto de Jefferson Christopher Cabrera Villacorta.
-- Página principal: [index.html](index.html)
+ [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Estado
-- Página lista para despliegue estático (GitHub Pages). Configuración de CI/CD: [.github/workflows/static.yml](.github/workflows/static.yml)
-- Dominio configurado: [CNAME](CNAME)
+Un portafolio web estático, moderno y responsivo para mostrar mi perfil profesional, proyectos y experiencia como Líder Técnico Backend Java.
 
-Estructura del proyecto
-- [index.html](index.html) — Documento HTML principal.
-- [styles.css](styles.css) — Estilos principales y variables CSS.
-- [script.js](script.js) — Lógica de interacción y animaciones.
-  - Funciones y manejadores relevantes: [`typeWriter`](script.js), [`createParticles`](script.js), [`scrollActive`](script.js), [`scrollHeader`](script.js), [`scrollUp`](script.js), manejador del formulario (`contactForm` en `script.js`).
-- [package.json](package.json) — Scripts y dependencias para desarrollo local; comandos disponibles: `start`, `dev` (ver [package.json](package.json)).
-- [images/](images/) — Activos de imagen utilizados en la web.
-- [.github/workflows/static.yml](.github/workflows/static.yml) — Workflow para despliegue a GitHub Pages.
-- [.vscode/settings.json](.vscode/settings.json) — Ajustes de previsualización local.
-- [CNAME](CNAME) — Dominio personalizado para GitHub Pages.
+**[Ver Demo en Vivo](https://jeffersoncabrera.com)**
 
-Cómo ejecutar localmente
-1. Instalar dependencias de desarrollo:
-   ```sh
-   npm install
-```
+--- 
+
+## ✨ Características (Features)
+
+-   **Diseño Moderno y Responsivo:** Adaptable a cualquier dispositivo, desde móviles hasta escritorios.
+-   **Single Page Application (SPA):** Navegación fluida en una sola página.
+-   **Animaciones y Transiciones:** Efectos sutiles para una experiencia de usuario dinámica.
+-   **Secciones Clave:**
+    -   **Inicio:** Presentación principal.
+    -   **Perfil:** Resumen sobre mí y mis habilidades.
+    -   **Proyectos:** Muestra de trabajos y casos de estudio.
+    -   **Experiencia:** Línea de tiempo de mi carrera profesional.
+    -   **Contacto:** Enlaces directos para contactarme.
+-   **Despliegue Automatizado:** Integración continua con GitHub Actions para despliegues automáticos.
+
+---
+
+## 🛠️ Tecnologías Utilizadas
+
+Este proyecto fue construido utilizando tecnologías web estándar y algunas librerías para mejorar la funcionalidad y la experiencia de usuario.
+
+-   **Frontend:**
+    -   HTML5
+    -   CSS3 (con variables CSS para theming)
+    -   JavaScript (ES6+)
+-   **Librerías:**
+    -   [Swiper.js](https://swiperjs.com/): Para carruseles interactivos y táctiles.
+    -   [Font Awesome](https://fontawesome.com/): Para la iconografía.
+-   **Desarrollo y Despliegue:**
+    -   [Node.js](https://nodejs.org/): Para el entorno de desarrollo local.
+    -   [http-server](https://www.npmjs.com/package/http-server): Servidor web ligero para desarrollo.
+    -   [GitHub Pages](https://pages.github.com/): Para el hosting estático.
+    -   [GitHub Actions](https://github.com/features/actions): Para la integración y despliegue continuo (CI/CD).
+
+---
+
+## 🚀 Cómo Empezar (Getting Started)
+
+Sigue estos pasos para configurar y ejecutar el proyecto en tu entorno local.
+
+### Prerrequisitos
+
+-   [Node.js](https://nodejs.org/en/download/) (versión 18.x o superior recomendada)
+-   [npm](https://www.npmjs.com/get-npm) (generalmente viene con Node.js)
+
+### Instalación y Ejecución
+
+1.  **Clona el repositorio:**
+    ```sh
+    git clone https://github.com/sitejcabrera/sitejcabrera.git
+    cd sitejcabrera
+    ```
+
+2.  **Instala las dependencias de desarrollo:**
+    Este comando instalará `http-server`.
+    ```sh
+    npm install
+    ```
+
+3.  **Inicia el servidor de desarrollo:**
+    ```sh
+    npm start
+    ```
+    El sitio se abrirá automáticamente en tu navegador en `http://localhost:3000`.
+
+---
+
+## 📦 Despliegue (Deployment)
+
+El despliegue de este sitio está completamente automatizado usando **GitHub Actions**.
+
+-   **Activador:** Cada vez que se realiza un `push` a la rama `main`.
+-   **Proceso:** El workflow definido en `.github/workflows/static.yml` se activa, empaqueta el contenido del repositorio y lo despliega en **GitHub Pages**.
+-   **Dominio:** El sitio se sirve bajo el dominio personalizado `jeffersoncabrera.com`, configurado en el archivo `CNAME`.
+
+---
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT.
