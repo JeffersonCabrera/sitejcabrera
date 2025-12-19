@@ -4,7 +4,6 @@ const navMenu = document.getElementById('nav-menu'),
       navClose = document.getElementById('nav-close')
 
 /*===== MENU SHOW =====*/
-/* Validate if constant exists */
 if(navToggle){
     navToggle.addEventListener('click', () =>{
         navMenu.classList.add('show-menu')
@@ -12,7 +11,6 @@ if(navToggle){
 }
 
 /*===== MENU HIDDEN =====*/
-/* Validate if constant exists */
 if(navClose){
     navClose.addEventListener('click', () =>{
         navMenu.classList.remove('show-menu')
@@ -24,82 +22,9 @@ const navLink = document.querySelectorAll('.nav__link')
 
 function linkAction(){
     const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
     navMenu.classList.remove('show-menu')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
-
-/*==================== ACCORDION SKILLS ====================*/
-const skillsContent = document.getElementsByClassName('skills__content'),
-      skillsHeader = document.querySelectorAll('.skills__header')
-
-function toggleSkills(){
-    let itemClass = this.parentNode.className
-
-    for(i = 0; i < skillsContent.length; i++){
-        skillsContent[i].className = 'skills__content skills__close'
-    }
-    if(itemClass === 'skills__content skills__close'){
-        this.parentNode.className = 'skills__content skills__open'
-    }
-}
-
-skillsHeader.forEach((el) =>{
-    el.addEventListener('click', toggleSkills)
-})
-
-/*==================== QUALIFICATION TABS ====================*/
-const tabs = document.querySelectorAll('[data-target]'),
-      tabContents = document.querySelectorAll('[data-content]')
-
-tabs.forEach(tab =>{
-    tab.addEventListener('click', () =>{
-        const target = document.querySelector(tab.dataset.target)
-
-        tabContents.forEach(tabContent =>{
-            tabContent.classList.remove('qualification__active')
-        })
-        target.classList.add('qualification__active')
-
-        tabs.forEach(tab =>{
-            tab.classList.remove('qualification__active')
-        })
-        tab.classList.add('qualification__active')
-    })
-})
-
-/*==================== PORTFOLIO SWIPER  ====================*/
-let swiperPortfolio = new Swiper(".portfolio__container", {
-    cssMode: true,
-    loop: true,
-
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-});
-
-/*==================== TESTIMONIAL ====================*/
-let swiperTestimonial = new Swiper(".testimonial__container", {
-    loop: true,
-    grabCursor: true,
-    spaceBetween: 48,
-
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-        dynamicBullets: true,
-    },
-    breakpoints:{
-        568:{
-            slidesPerView: 2,
-        }
-    }
-});
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]')
@@ -121,216 +46,208 @@ function scrollActive(){
 }
 window.addEventListener('scroll', scrollActive)
 
-/*==================== CHANGE BACKGROUND HEADER ====================*/ 
-function scrollHeader(){
-    const nav = document.getElementById('header')
-    // When the scroll is greater than 200 viewport height, add the scroll-header class to the header tag
-    if(this.scrollY >= 80) nav.classList.add('scroll-header'); else nav.classList.remove('scroll-header')
-}
-window.addEventListener('scroll', scrollHeader)
-
 /*==================== SHOW SCROLL UP ====================*/ 
 function scrollUp(){
     const scrollUp = document.getElementById('scroll-up');
-    // When the scroll is higher than 560 viewport height, add the show-scroll class to the a tag with the scroll-top class
     if(this.scrollY >= 560) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll')
 }
 window.addEventListener('scroll', scrollUp)
 
-/*==================== DARK LIGHT THEME ====================*/ 
-const themeButton = document.getElementById('theme-button')
-const darkTheme = 'dark-theme'
-const iconTheme = 'uil-sun'
-
-// Previously selected topic (if user selected)
-const selectedTheme = localStorage.getItem('selected-theme')
-const selectedIcon = localStorage.getItem('selected-icon')
-
-// We obtain the current theme that the interface has by validating the dark-theme class
-const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
-const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'uil-moon' : 'uil-sun'
-
-// We validate if the user previously chose a topic
-if (selectedTheme) {
-  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
-  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
-  themeButton.classList[selectedIcon === 'uil-moon' ? 'add' : 'remove'](iconTheme)
-}
-
-// Activate / deactivate the theme manually with the button
-if(themeButton) {
-    themeButton.addEventListener('click', () => {
-        // Add or remove the dark / icon theme
-        document.body.classList.toggle(darkTheme)
-        themeButton.classList.toggle(iconTheme)
-        // We save the theme and the current icon that the user chose
-        localStorage.setItem('selected-theme', getCurrentTheme())
-        localStorage.setItem('selected-icon', getCurrentIcon())
-    })
-}
-
-/*==================== CONTACT FORM ====================*/
-const contactForm = document.getElementById('contact-form');
-
-if(contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(contactForm);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const message = formData.get('message');
-        
-        // Simple validation
-        if(!name || !email || !message) {
-            alert('Por favor, completa todos los campos.');
-            return;
-        }
-        
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if(!emailRegex.test(email)) {
-            alert('Por favor, ingresa un email válido.');
-            return;
-        }
-        
-        // Simulate form submission
-        const submitButton = contactForm.querySelector('.contact__form-button');
-        const originalText = submitButton.innerHTML;
-        
-        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
-        submitButton.disabled = true;
-        
-        // Simulate API call
-        setTimeout(() => {
-            alert('¡Mensaje enviado correctamente! Te contactaré pronto.');
-            contactForm.reset();
-            submitButton.innerHTML = originalText;
-            submitButton.disabled = false;
-        }, 2000);
+/*==================== PARTICLES.JS CONFIG (Network Topology) ====================*/
+if(document.getElementById('particles-js')) {
+    particlesJS("particles-js", {
+        "particles": {
+            "number": {
+                "value": 80,
+                "density": {
+                    "enable": true,
+                    "value_area": 800
+                }
+            },
+            "color": {
+                "value": "#64ffda" /* Highlight Color */
+            },
+            "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": "#000000"
+                },
+                "polygon": {
+                    "nb_sides": 5
+                }
+            },
+            "opacity": {
+                "value": 0.5,
+                "random": false,
+                "anim": {
+                    "enable": false,
+                    "speed": 1,
+                    "opacity_min": 0.1,
+                    "sync": false
+                }
+            },
+            "size": {
+                "value": 3,
+                "random": true,
+                "anim": {
+                    "enable": false,
+                    "speed": 40,
+                    "size_min": 0.1,
+                    "sync": false
+                }
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#64ffda",
+                "opacity": 0.2, /* Low opacity for subtle network effect */
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 2, /* Slow movement */
+                "direction": "none",
+                "random": false,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                }
+            }
+        },
+        "interactivity": {
+            "detect_on": "window", /* Better mouse detection */
+            "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "grab" /* Grab effect on hover */
+                },
+                "onclick": {
+                    "enable": true,
+                    "mode": "push"
+                },
+                "resize": true
+            },
+            "modes": {
+                "grab": {
+                    "distance": 200,
+                    "line_linked": {
+                        "opacity": 0.4
+                    }
+                },
+                "bubble": {
+                    "distance": 400,
+                    "size": 40,
+                    "duration": 2,
+                    "opacity": 8,
+                    "speed": 3
+                },
+                "repulse": {
+                    "distance": 200,
+                    "duration": 0.4
+                },
+                "push": {
+                    "particles_nb": 4
+                },
+                "remove": {
+                    "particles_nb": 2
+                }
+            }
+        },
+        "retina_detect": true
     });
 }
 
-/*==================== SMOOTH SCROLLING ====================*/
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if(target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+/*==================== GSAP ANIMATIONS ====================*/
+// Register ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
+
+// 1. Hero Animations
+const heroTimeline = gsap.timeline();
+heroTimeline
+    .from('.home__greeting', { y: 20, opacity: 0, duration: 0.8, delay: 0.5 })
+    .from('.home__title', { y: 20, opacity: 0, duration: 0.8 }, "-=0.6")
+    .from('.home__subtitle', { y: 20, opacity: 0, duration: 0.8 }, "-=0.6")
+    .from('.home__description', { y: 20, opacity: 0, duration: 0.8 }, "-=0.6")
+    .from('.home__buttons', { y: 20, opacity: 0, duration: 0.8 }, "-=0.6")
+    .from('.home__img-container', { scale: 0.8, opacity: 0, duration: 1, ease: "back.out(1.7)" }, "-=0.8");
+
+// 2. About/Skills Animations
+gsap.from('.about__card-glass', {
+    scrollTrigger: {
+        trigger: '.about',
+        start: 'top 80%',
+    },
+    x: -50,
+    opacity: 0,
+    duration: 1
+});
+
+gsap.from('.skill__item', {
+    scrollTrigger: {
+        trigger: '.about__skills',
+        start: 'top 85%',
+    },
+    y: 30,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.1
+});
+
+// 3. Projects Animations
+gsap.from('.project__card', {
+    scrollTrigger: {
+        trigger: '.projects',
+        start: 'top 80%',
+    },
+    y: 50,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.2
+});
+
+// 4. Timeline (Experience) Animations
+const timelineItems = document.querySelectorAll('.timeline__item');
+
+timelineItems.forEach((item, index) => {
+    // Determine direction based on index (even left, odd right - though here layout is all left, so just fade up)
+    gsap.from(item, {
+        scrollTrigger: {
+            trigger: item,
+            start: 'top 85%',
+        },
+        x: -30,
+        opacity: 0,
+        duration: 0.8,
+        delay: index * 0.1
     });
 });
 
-/*==================== TYPING ANIMATION ====================*/
-function typeWriter(element, text, speed = 100) {
-    let i = 0;
-    element.innerHTML = '';
-    
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-    
-    type();
-}
-
-// Initialize typing animation when page loads
-window.addEventListener('load', () => {
-    const titleElement = document.querySelector('.home__title-accent');
-    if(titleElement) {
-        const originalText = titleElement.textContent;
-        typeWriter(titleElement, originalText, 150);
-    }
+// Animate the line drawing
+gsap.from('.timeline__line', {
+    scrollTrigger: {
+        trigger: '.timeline',
+        start: 'top 80%',
+        end: 'bottom 80%',
+        scrub: 1, // Link to scroll position
+    },
+    scaleY: 0,
+    transformOrigin: "top center",
+    ease: "none"
 });
 
-/*==================== INTERSECTION OBSERVER FOR ANIMATIONS ====================*/
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Observe elements for animation
-document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.project__card, .timeline__content, .contact__card, .skill__item');
-    
-    animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
+// 5. Contact Animations
+gsap.from('.contact__card', {
+    scrollTrigger: {
+        trigger: '.contact',
+        start: 'top 85%',
+    },
+    scale: 0.9,
+    opacity: 0,
+    duration: 0.6,
+    stagger: 0.2
 });
-
-/*==================== PRELOADER ====================*/
-window.addEventListener('load', () => {
-    const preloader = document.querySelector('.preloader');
-    if(preloader) {
-        preloader.style.opacity = '0';
-        setTimeout(() => {
-            preloader.style.display = 'none';
-        }, 500);
-    }
-});
-
-/*==================== PARTICLES BACKGROUND ====================*/
-function createParticles() {
-    const particlesContainer = document.createElement('div');
-    particlesContainer.className = 'particles';
-    particlesContainer.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: -1;
-    `;
-    
-    for(let i = 0; i < 50; i++) {
-        const particle = document.createElement('div');
-        particle.style.cssText = `
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: rgba(0, 168, 107, 0.3);
-            border-radius: 50%;
-            animation: float ${Math.random() * 3 + 2}s infinite ease-in-out;
-            left: ${Math.random() * 100}%;
-            top: ${Math.random() * 100}%;
-            animation-delay: ${Math.random() * 2}s;
-        `;
-        particlesContainer.appendChild(particle);
-    }
-    
-    document.body.appendChild(particlesContainer);
-}
-
-// Add CSS for particle animation
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes float {
-        0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
-        50% { transform: translateY(-20px) rotate(180deg); opacity: 0.8; }
-    }
-`;
-document.head.appendChild(style);
-
-// Initialize particles
-createParticles();
