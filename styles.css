@@ -594,8 +594,10 @@ img {
     transition: background 0.3s;
 }
 
-.timeline__item:hover .timeline__dot {
+.timeline__item:hover .timeline__dot,
+.timeline__item.active .timeline__dot {
     background: var(--highlight-color);
+    box-shadow: 0 0 10px rgba(100, 255, 218, 0.5); /* Add glow for better visibility */
 }
 
 .timeline__content {
