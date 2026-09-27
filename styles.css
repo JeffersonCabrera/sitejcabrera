@@ -675,6 +675,17 @@ img {
     color: var(--secondary-color);
 }
 
+.contact__mail {
+    color: var(--accent-color);
+    font-family: var(--code-font);
+    font-size: var(--small-font-size);
+    word-break: break-all;
+}
+
+.contact__mail:hover {
+    text-decoration: underline;
+}
+
 /* ===== TECH STACK ===== */
 .tech__container {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
