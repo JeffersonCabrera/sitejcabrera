@@ -1,16 +1,16 @@
 {
-  "name": "project",
+  "name": "jefferson-cabrera-site",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "description": "Sitio profesional de Jefferson Cabrera: arquitectura de software, integración y liderazgo técnico.",
+  "type": "module",
   "scripts": {
-    "start": "http-server . -p 3000 -o",
-    "dev": "http-server . -p 3000 -o"
+    "build": "node scripts/build.mjs",
+    "start": "node scripts/serve.mjs",
+    "dev": "node scripts/serve.mjs"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "http-server": "^14.1.1"
-  }
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "UNLICENSED"
 }
