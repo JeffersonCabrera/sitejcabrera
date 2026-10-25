@@ -2,8 +2,10 @@ import { copyFile, lstat, mkdir, realpath, rm } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { projectDirectory, publicFiles } from './site-config.mjs';
+import { assertSupportedRuntime } from './runtime.mjs';
 
 export async function buildSite() {
+  assertSupportedRuntime();
   const root = await realpath(projectDirectory);
   const output = resolve(root, 'dist');
   if (dirname(output) !== root) throw new Error('Directorio de salida inválido.');

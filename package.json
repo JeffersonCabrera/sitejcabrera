@@ -10,7 +10,7 @@
     "dev": "node scripts/serve.mjs"
   },
   "engines": {
-    "node": ">=22"
+    "node": "^22.23.4 || ^24.22.1"
   },
   "license": "UNLICENSED"
 }
